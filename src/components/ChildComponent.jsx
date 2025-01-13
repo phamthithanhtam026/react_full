@@ -23,12 +23,20 @@ class ChildComponent extends React.Component {
     channel: "HoiDanIT",
     age: 20,
   };
+
+  handleChangeName(event) {
+    console.log("check event: ", event.target.value);
+  }
   render() {
     return (
       // JSX
       <div>
         <p>Hello ChildComponent with React</p>
-        <p>{JSON.stringify(this.state)}</p>
+        <input
+          type="text"
+          placeholder="Enter your name"
+          onChange={(event) => this.handleChangeName(event)}
+        />
         <p>
           I am {this.state.name} and age: {this.state.age}. My channel is
           {this.state.channel}
