@@ -25,7 +25,9 @@ class ChildComponent extends React.Component {
   };
 
   handleChangeName(event) {
-    console.log("check event: ", event.target.value);
+    this.setState({
+      name: event.target.value,
+    });
   }
   render() {
     return (
