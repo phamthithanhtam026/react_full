@@ -18,18 +18,44 @@ export default ChildComponent
 // Class Component
 import React from "react";
 class ChildComponent extends React.Component {
-  state = {
-    name: "Eric",
-    channel: "HoiDanIT",
-    age: 20,
-  };
+  constructor(props) {
+    console.log("run constructor: 0");
+
+    super(props);
+    this.state = {
+      name: "Eric",
+      channel: "HoiDanIT",
+      age: 20,
+    };
+  }
+
+  componentDidMount() {
+    console.log("run component did mount");
+    setTimeout(() => {
+      document.title = "Eric & HoiDanIT";
+    }, 3000);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log("run component did update");
+    console.log(
+      "check state: ",
+      this.state,
+      "check prevState: ",
+      prevState,
+      " check props: ",
+      prevProps
+    );
+  }
 
   handleChangeName(event) {
     this.setState({
       name: event.target.value,
     });
   }
+
   render() {
+    console.log("run re-render");
     return (
       // JSX
       <div>
