@@ -1,21 +1,14 @@
 import logo from "./logo.svg";
 import "./App.css";
-import ChildComponent from "./components/ChildComponent";
+import ListTodo from "./components/ListTodo";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <ChildComponent />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {/* <ChildComponent /> */}
+        <ListTodo />
       </header>
     </div>
   );
